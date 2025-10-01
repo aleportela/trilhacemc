@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Controle de Presença</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form onsubmit="return validarLogin(event)">
+    <input type="email" id="email" placeholder="Email" required /><br/><br/>
+    <input type="password" id="senha" placeholder="Senha" required /><br/><br/>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <script>
+    function validarLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      // Usuário administrador padrão
+      if(email === 'admin@exemplo.com' && senha === 'admin123') {
+        alert('Login realizado com sucesso! Bem-vindo, Administrador.');
+        // Aqui você pode redirecionar para outra página ou mostrar conteúdo
+      } else {
+        alert('Email ou senha incorretos.');
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
